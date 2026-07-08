@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Towslee's Got Pressure — Proposal for Desiree Chandler</title>
+<style>
+  :root{
+    --black:#0a0a0a;
+    --black-soft:#151515;
+    --gold:#C9A24D;
+    --gold-lt:#E4CA8A;
+    --slate:#5f6670;
+    --ink:#17181b;
+    --cream:#F7F6F2;
+    --line:#e7e4db;
+    --card:#ffffff;
+    --good:#2f7d5b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html,body{background:#e6e5e0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.5;}
+  .wrap{max-width:540px;margin:0 auto;background:var(--cream);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.16);overflow:hidden;}
+  .serif{font-family:'Iowan Old Style','Palatino Linotype',Georgia,serif;}
+
+  /* HERO */
+  .hero{background:radial-gradient(120% 90% at 50% 0%,#1c1c1c 0%,#000 70%);color:#fff;padding:30px 24px 30px;position:relative;text-align:center;}
+  .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--gold-lt),var(--gold));}
+  .logo{width:190px;max-width:66%;height:auto;margin:0 auto 20px;display:block;mix-blend-mode:lighten;}
+  .eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-lt);}
+  .hero h1{font-family:'Iowan Old Style',Georgia,serif;font-size:28px;font-weight:600;margin:9px 0 16px;letter-spacing:.3px;}
+  .herometa{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;font-size:11.5px;color:#c8ccd2;}
+  .herometa .pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:5px 12px;}
+  .herometa .pill b{color:#fff;font-weight:600;}
+  .forwho{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:14px;font-size:12px;text-align:left;}
+  .forwho .lbl{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-lt);margin-bottom:3px;}
+  .forwho b{font-size:13px;}
+
+  .trust{display:flex;justify-content:center;gap:18px;padding:12px 16px;background:#000;color:#dadde2;font-size:10.5px;flex-wrap:wrap;}
+  .trust span{white-space:nowrap;}
+  .stars{color:var(--gold);letter-spacing:1px;}
+
+  section{padding:24px 22px;}
+  .sec-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:600;}
+  .sec-title{font-family:'Iowan Old Style',Georgia,serif;font-size:21px;font-weight:600;color:var(--ink);margin-bottom:10px;}
+  .intro{font-size:13.5px;color:#3d434c;margin-bottom:18px;}
+
+  /* SCOPE */
+  .svc{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);}
+  .svc:last-child{border-bottom:none;}
+  .svc .n{font-family:Georgia,serif;font-size:13px;font-weight:700;color:var(--gold);width:26px;flex:none;padding-top:1px;}
+  .svc h4{font-size:14.5px;color:var(--ink);margin-bottom:4px;}
+  .svc p{font-size:12.5px;color:var(--slate);}
+
+  /* TABLE */
+  .quote-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 6px 22px rgba(20,20,20,.07);}
+  table.q{width:100%;border-collapse:collapse;}
+  table.q thead th{background:#000;color:#efe9dc;font-size:9px;letter-spacing:1.3px;text-transform:uppercase;font-weight:600;padding:11px 16px;text-align:left;}
+  table.q thead th.r{text-align:right;}
+  table.q td{padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13px;}
+  table.q td .it{font-weight:700;color:var(--ink);}
+  table.q td .sz{font-size:11px;color:var(--slate);}
+  table.q td.r{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap;}
+  table.q tr.addon-row td{background:#fffdf7;}
+  table.q tr.addon-row td .it{color:#8a6d2b;}
+  table.q tr.disc td{background:#f3f8f4;}
+  table.q tr.disc td .it,table.q tr.disc td.r{color:var(--good);}
+  .totbar{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:radial-gradient(120% 200% at 0% 0%,#1d1d1d,#000);color:#fff;}
+  .totbar .l{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-lt);}
+  .totbar .v{font-family:Georgia,serif;font-size:28px;}
+  .allin{font-size:11.5px;color:var(--slate);text-align:center;margin-top:11px;}
+  .allin b{color:var(--ink);}
+
+  /* ADD-ONS */
+  .addon{border:1.5px solid var(--line);border-radius:14px;padding:15px 16px;margin-bottom:12px;background:#fff;transition:.15s;cursor:pointer;}
+  .addon.on{border-color:var(--gold);background:#fffdf6;box-shadow:0 4px 16px rgba(201,162,77,.16);}
+  .addon .row{display:flex;align-items:flex-start;gap:12px;}
+  .check{width:24px;height:24px;flex:none;border-radius:7px;border:2px solid #cdc8ba;position:relative;transition:.15s;margin-top:1px;}
+  .addon.on .check,.subopt.on .mini,.prepay.on .mini{background:var(--gold);border-color:var(--gold);}
+  .addon.on .check:after,.subopt.on .mini:after,.prepay.on .mini:after{content:"";position:absolute;left:7px;top:3px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);}
+  .subopt.on .mini:after{left:6px;top:2px;}
+  .prepay.on .mini:after{left:6px;top:3px;}
+  .addon h4{font-size:14.5px;color:var(--ink);}
+  .addon .sub{font-size:12px;color:var(--slate);margin-top:3px;}
+  .strike{text-decoration:line-through;color:#b4b0a4;}
+  .addon .price{margin-left:auto;font-size:14px;font-weight:700;color:var(--gold);white-space:nowrap;padding-left:10px;}
+  .rec{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.4px;color:#fff;background:var(--good);padding:2px 8px;border-radius:20px;margin-top:7px;}
+  .ctrl{margin-top:13px;padding-top:13px;border-top:1px dashed var(--line);}
+  .stepper{display:flex;align-items:center;gap:0;margin-bottom:11px;}
+  .stepper:last-child{margin-bottom:0;}
+  .stepper .sl{font-size:12.5px;color:var(--ink);flex:1;font-weight:600;}
+  .stepper .sl small{display:block;font-weight:400;color:var(--slate);font-size:11px;}
+  .stepper button{width:36px;height:36px;border:1.5px solid var(--gold);background:#fff;color:var(--gold);font-size:21px;border-radius:9px;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center;}
+  .stepper .qty{width:42px;text-align:center;font-size:16px;font-weight:700;color:var(--ink);}
+  .modewrap{display:flex;gap:8px;margin-bottom:12px;}
+  .modebtn{flex:1;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:9px;font-size:11.5px;font-weight:600;color:var(--slate);cursor:pointer;text-align:center;}
+  .modebtn.on{border-color:var(--gold);background:#fffdf6;color:var(--ink);}
+  .modebtn span{display:block;font-size:11px;font-weight:700;color:var(--gold);margin-top:2px;}
+
+  /* FACTS */
+  .fact{background:#fff;border-left:3px solid var(--gold);border-radius:10px;padding:15px 16px;margin-bottom:14px;}
+  .fact h4{font-size:13.5px;color:var(--ink);margin-bottom:6px;}
+  .fact p{font-size:12.5px;color:#3d434c;}
+  .statgrid{display:flex;gap:10px;margin:14px 0 6px;}
+  .stat{flex:1;background:#000;color:#fff;border-radius:12px;padding:15px 10px;text-align:center;}
+  .stat .num{font-family:Georgia,serif;font-size:22px;color:var(--gold-lt);}
+  .stat .t{font-size:9.5px;color:#c8ccd2;margin-top:4px;line-height:1.35;}
+  .fomo{background:#000;color:#f0e7d2;border:1px solid #2a2a2a;border-radius:12px;padding:15px 16px;margin-top:14px;font-size:12.5px;}
+  .fomo b{color:var(--gold-lt);}
+  sup a{color:var(--gold);text-decoration:none;font-weight:700;}
+  .refs{font-size:10px;color:#8a9099;margin-top:14px;line-height:1.7;}
+  .refs a{color:var(--slate);}
+  .disc{font-size:10.5px;color:#8a9099;font-style:italic;margin-top:10px;}
+
+  /* TERMS */
+  .terms li{list-style:none;font-size:11.5px;color:var(--slate);padding-left:15px;position:relative;margin-bottom:8px;}
+  .terms li:before{content:"";position:absolute;left:0;top:6px;width:5px;height:5px;background:var(--gold);border-radius:50%;}
+  .warn{background:#faf6f2;border:1px solid #ecdccb;border-radius:10px;padding:14px 15px;margin-bottom:14px;}
+  .warn h4{font-size:12.5px;color:#8a5a33;margin-bottom:5px;}
+  .warn p{font-size:11.5px;color:#6a4b37;}
+
+  /* AUTHORIZE */
+  .auth{background:radial-gradient(120% 90% at 50% 0%,#1c1c1c,#000 75%);color:#fff;padding:28px 22px 32px;}
+  .auth .sec-eyebrow{color:var(--gold-lt);}
+  .auth h2{font-family:'Iowan Old Style',Georgia,serif;font-size:22px;margin-bottom:8px;}
+  .auth .subtxt{font-size:12.5px;color:#c2c7ce;margin-bottom:18px;}
+  .totalbar{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;margin-bottom:16px;}
+  .totalbar .l{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-lt);}
+  .totalbar .v{font-family:Georgia,serif;font-size:27px;color:#fff;}
+  .prepay{display:flex;align-items:center;gap:12px;background:rgba(201,162,77,.09);border:1px solid rgba(201,162,77,.34);border-radius:12px;padding:14px 15px;margin-bottom:18px;cursor:pointer;}
+  .prepay .mini{width:22px;height:22px;border-radius:6px;border:2px solid var(--gold-lt);flex:none;position:relative;}
+  .prepay .pt{font-size:12.5px;}
+  .prepay .pt b{color:#fff;}
+  .prepay .pt span{color:#c2c7ce;font-size:11px;}
+  .prepay .save{margin-left:auto;color:var(--gold-lt);font-weight:700;font-size:14px;white-space:nowrap;}
+  .field{margin-bottom:14px;}
+  .field label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:6px;}
+  .field input{width:100%;padding:14px;border-radius:11px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:#fff;font-size:16px;font-family:inherit;}
+  .field input::placeholder{color:#868d97;}
+  .daterow{display:flex;gap:10px;}
+  .daterow input{flex:1;}
+  .today-btn{border:1px solid var(--gold);background:transparent;color:var(--gold-lt);font-size:12px;font-weight:600;border-radius:11px;padding:0 16px;cursor:pointer;white-space:nowrap;}
+  .cta{width:100%;border:none;border-radius:13px;padding:17px;font-size:16px;font-weight:700;letter-spacing:.3px;background:linear-gradient(90deg,var(--gold),#b58c34);color:#fff;cursor:pointer;box-shadow:0 8px 22px rgba(201,162,77,.28);}
+  .cta:active{transform:translateY(1px);}
+  .fine{font-size:10.5px;color:#9199a3;text-align:center;margin-top:12px;line-height:1.55;}
+  .lock{font-size:10.5px;color:#9199a3;text-align:center;margin-top:8px;}
+
+  /* FOOTER */
+  footer{background:#000;color:#aab0b8;padding:28px 22px 32px;text-align:center;}
+  footer .logo{width:150px;mix-blend-mode:lighten;margin-bottom:6px;}
+  footer .ftag{font-size:11px;color:#868d97;margin:2px 0 18px;}
+  .social{display:flex;justify-content:center;gap:11px;margin-bottom:16px;}
+  .social a{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#e2e6eb;text-decoration:none;}
+  .social a svg{width:20px;height:20px;fill:currentColor;}
+  .social a.web{color:var(--gold-lt);}
+  .fcontact a{color:var(--gold-lt);text-decoration:none;font-weight:700;font-size:15px;}
+  footer .copy{font-size:10px;color:#616770;margin-top:16px;}
+
+  /* CONFETTI / THANKS */
+  #confetti{position:fixed;inset:0;pointer-events:none;z-index:60;display:none;}
+  #thanks{position:fixed;inset:0;background:radial-gradient(120% 90% at 50% 0%,#1c1c1c,#000 75%);color:#fff;z-index:61;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:34px;}
+  #thanks .badge{width:88px;height:88px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:22px;box-shadow:0 10px 30px rgba(201,162,77,.4);animation:pop .5s ease;}
+  #thanks .badge:after{content:"";width:22px;height:40px;border:solid #fff;border-width:0 5px 5px 0;transform:rotate(45deg);margin-top:-8px;}
+  @keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+  #thanks h2{font-family:Georgia,serif;font-size:29px;margin-bottom:12px;}
+  #thanks p{font-size:14px;color:#c2c7ce;max-width:330px;margin-bottom:8px;}
+  #thanks .sum{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:16px 20px;margin-top:18px;font-size:13px;color:#dadde2;}
+  #thanks .sum b{color:var(--gold-lt);}
+  #thanks .close{margin-top:18px;color:#868d97;font-size:12px;background:none;border:none;cursor:pointer;}
+  .fine a{color:var(--gold-lt);}
+  .consent{margin-bottom:16px;display:flex;flex-direction:column;gap:10px;}
+  .cbx{display:flex;gap:11px;align-items:flex-start;font-size:12px;color:#c2c7ce;cursor:pointer;}
+  .cbx input{position:absolute;opacity:0;width:0;height:0;}
+  .cbx .box{width:22px;height:22px;flex:none;border-radius:6px;border:2px solid var(--gold-lt);position:relative;margin-top:1px;transition:.15s;}
+  .cbx input:checked+.box{background:var(--gold);border-color:var(--gold);}
+  .cbx input:checked+.box:after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);}
+  .cbx b{color:#fff;}
+  .legal{margin-top:14px;}
+  .legal a{color:#868d97;text-decoration:none;font-size:11px;}
+  #legal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:70;display:none;align-items:flex-end;justify-content:center;}
+  #legal .sheet{background:var(--cream);color:var(--ink);max-width:540px;width:100%;max-height:88vh;overflow-y:auto;border-radius:16px 16px 0 0;padding:22px 22px 34px;}
+  #legal h3{font-family:Georgia,serif;font-size:20px;color:var(--black);margin-bottom:4px;}
+  #legal .upd{font-size:10.5px;color:var(--slate);margin-bottom:14px;}
+  #legal h4{font-size:12.5px;color:var(--black);margin:14px 0 5px;}
+  #legal p{font-size:11.5px;color:#3d434c;margin-bottom:8px;}
+  #legal .x{position:sticky;top:0;float:right;background:var(--black);color:#fff;border:none;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;}
+</style>
+<!-- Google Analytics 4: replace G-XXXXXXXXXX with your Measurement ID (Admin > Data Streams). Loads only after you set a real ID. -->
+<script>
+  (function(){var GA_ID="G-XXXXXXXXXX";if(!/^G-[A-Z0-9]{6,}$/.test(GA_ID))return;
+   var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);
+   window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',GA_ID);})();
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <img class="logo" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/6JHgINw2KJ7SHHj771TD/media/6a06038fe92818f121ab1f3c.jpg" alt="Towslee's Got Pressure" onerror="this.style.display='none'">
+    <div class="eyebrow">Property Cleaning Proposal</div>
+    <h1 id="hProp">90520 Island Loop<br>Sturgeon Lake, MN</h1>
+    <div class="herometa">
+      <span class="pill">Single-story lake home</span>
+      <span class="pill">Prepared <b>Jul 7, 2026</b></span>
+      <span class="pill">Quote <b id="hQnum">#TGP-0107</b></span>
+    </div>
+    <div class="forwho">
+      <div>
+        <div class="lbl">Prepared For</div>
+        <b id="hClient">Desiree Chandler</b><br><span id="hCompany">Evergreen Realty LLC</span>
+      </div>
+      <div style="text-align:right">
+        <div class="lbl">Your Cleaner</div>
+        <b>Devan Towslee</b><br>(218) 451-6780
+      </div>
+    </div>
+  </div>
+
+  <div class="trust">
+    <span><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 rated</span>
+    <span>Licensed &amp; Insured</span>
+    <span>Minnesota soft wash pros</span>
+  </div>
+
+  <section>
+    <div class="sec-eyebrow">The Plan</div>
+    <div class="sec-title">What we'll get done</div>
+    <p class="intro">Hi Desiree, thanks for reaching out. Here's everything it takes to get the Island Loop property looking its best, top to bottom. Every surface gets the cleaning made for it, so the roof, the wood, and the finish all come out clean and protected.</p>
+
+    <div class="svc"><div class="n">01</div><div>
+      <h4>Roof Soft Wash</h4>
+      <p>We soft wash the roof to kill the moss, lichen, and black streaks down at the root, the way the shingle makers recommend. It comes clean and stays clean, with none of the pressure that wears shingles out.</p>
+    </div></div>
+    <div class="svc"><div class="n">02</div><div>
+      <h4>Wood Siding, Wood Safe Wash</h4>
+      <p>The stained siding gets a wood safe wash that clears the algae, mildew, and gray weathering while keeping your stain and seal intact. We never put harsh chlorine on your wood.</p>
+    </div></div>
+    <div class="svc"><div class="n">03</div><div>
+      <h4>Eaves, Soffit &amp; Fascia</h4>
+      <p>We clean the full eave line so the trim matches the fresh roof and siding for a finished look all the way around.</p>
+    </div></div>
+    <div class="svc"><div class="n">04</div><div>
+      <h4>Lakeside Wood Stairs</h4>
+      <p>The mossy stairs down to the lake get the same wood safe treatment, so they're safe underfoot and looking right again.</p>
+    </div></div>
+  </section>
+
+  <section style="padding-top:4px;">
+    <div class="sec-eyebrow">Your Investment</div>
+    <div class="quote-card">
+      <table class="q">
+        <thead><tr><th>Service</th><th>Size</th><th class="r">Price</th></tr></thead>
+        <tbody id="qbody"></tbody>
+      </table>
+      <div class="totbar"><div class="l">Total</div><div class="v" id="tblTotal">$1,235</div></div>
+    </div>
+    <p class="allin">One <b>all-in</b> price. Labor and materials are included, and there's nothing added on the day of service.</p>
+  </section>
+
+  <section style="padding-top:6px;">
+    <div class="sec-eyebrow">Add To Your Quote</div>
+    <div class="sec-title" style="font-size:18px;">Round it out while we're there</div>
+    <p class="intro" style="margin-bottom:16px;">Tap to add. Your total updates as you go, and we handle it all in one visit.</p>
+
+    <!-- Windows -->
+    <div class="addon" id="winCard">
+      <div class="row" onclick="toggleWin(event)">
+        <div class="check"></div>
+        <div>
+          <h4>Window Cleaning</h4>
+          <div class="sub"><span class="strike">$12 per exterior window</span> &nbsp;<b style="color:var(--gold)">$10</b> bundled with your siding wash.</div>
+          <span class="rec">Best paired with the siding wash</span>
+        </div>
+        <div class="price" id="winPrice">$0</div>
+      </div>
+      <div class="ctrl" id="winCtrl" style="display:none">
+        <div class="modewrap">
+          <div class="modebtn on" id="mExt" onclick="setMode('ext',event)">Exterior only<span>$10 / window</span></div>
+          <div class="modebtn" id="mIn" onclick="setMode('inout',event)">Interior + Exterior<span>$18.50 / window</span></div>
+        </div>
+        <div class="stepper">
+          <div class="sl">Number of windows</div>
+          <button type="button" onclick="stepWin(-1)">&minus;</button>
+          <div class="qty" id="winQty">0</div>
+          <button type="button" onclick="stepWin(1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screens -->
+    <div class="addon" id="scrCard">
+      <div class="row" onclick="toggleScr(event)">
+        <div class="check"></div>
+        <div>
+          <h4>Window Screen Cleaning</h4>
+          <div class="sub"><b style="color:var(--gold)">$5</b> per screen. Clears pollen and grime so more light comes through.</div>
+        </div>
+        <div class="price" id="scrPrice">$0</div>
+      </div>
+      <div class="ctrl" id="scrCtrl" style="display:none">
+        <div class="stepper">
+          <div class="sl">Number of screens</div>
+          <button type="button" onclick="stepScr(-1)">&minus;</button>
+          <div class="qty" id="scrQty">0</div>
+          <button type="button" onclick="stepScr(1)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deck -->
+    <div class="addon" id="deckCard" onclick="toggleDeck(event)">
+      <div class="row">
+        <div class="check"></div>
+        <div>
+          <h4>Lakeside Deck Soft Wash</h4>
+          <div class="sub">The mossy wood deck, cleaned with the same wood safe wash.</div>
+        </div>
+        <div class="price">+$165</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:6px;">
+    <div class="sec-eyebrow">Why It Pays To Do It Now</div>
+    <div class="fact">
+      <h4>Left alone, buildup does real damage.</h4>
+      <p>Roof algae (<i>Gloeocapsa magma</i>) feeds on the limestone in asphalt shingles and traps moisture against the roof. Over time it strips the protective granules and can cut a 25 year roof down to 15 to 20 years.<sup><a href="#r1">1</a></sup> The same organic growth holds damp against wood, which speeds up rot and locks in staining that only gets harder to remove the longer it sits.<sup><a href="#r2">2</a></sup></p>
+    </div>
+    <div class="fomo"><b>The longer it waits, the more it costs.</b> Cleaning now protects the roof and wood you've already paid for, and gets this property on the calendar before the busy season fills up.</div>
+  </section>
+
+  <section style="padding-top:6px;">
+    <div class="sec-eyebrow">For The Listing</div>
+    <div class="sec-title">A clean exterior helps it sell</div>
+    <p class="intro" style="margin-bottom:8px;">For a listing, this is one of the easier wins before it hits the market, and a strong talking point for buyers.</p>
+    <div class="statgrid">
+      <div class="stat"><div class="num">Up to 7%</div><div class="t">higher value tied to strong curb appeal<sup><a href="#r3">3</a></sup></div></div>
+      <div class="stat"><div class="num">$5&ndash;15K</div><div class="t">commonly cited added value<sup><a href="#r4">4</a></sup></div></div>
+      <div class="stat"><div class="num">High ROI</div><div class="t">among the top return exterior updates<sup><a href="#r4">4</a></sup></div></div>
+    </div>
+    <p class="disc">These are general industry findings and won't apply equally to every home or project. They're shared as background, not a guarantee of value or results for this property.</p>
+    <div class="refs">
+      <div id="r1">1. Perfect Power Wash, "Gloeocapsa Magma: Explaining Roof Streaks." <a href="https://perfectpowerwash.com/blog/gloeocapsa-magma-explaining-roof-streaks/" target="_blank" rel="noopener">perfectpowerwash.com</a></div>
+      <div id="r2">2. Asphalt Roofing Manufacturers Association (ARMA), "Algae &amp; Moss Prevention and Cleaning for Asphalt Roofing Systems." <a href="https://www.asphaltroofing.org/algae-moss-prevention-cleaning-asphalt-roofing-systems/" target="_blank" rel="noopener">asphaltroofing.org</a></div>
+      <div id="r3">3. Journal of Real Estate Finance &amp; Economics, on curb appeal and home value (as cited by First Coast Property Experts). <a href="https://firstcoastpropertyexperts.com/blog/curb-appeal-roi-exterior-cleaning-home-value/" target="_blank" rel="noopener">firstcoastpropertyexperts.com</a></div>
+      <div id="r4">4. First Coast Property Experts, "Curb Appeal ROI: Exterior Cleaning &amp; Home Value." <a href="https://firstcoastpropertyexperts.com/blog/curb-appeal-roi-exterior-cleaning-home-value/" target="_blank" rel="noopener">firstcoastpropertyexperts.com</a></div>
+    </div>
+  </section>
+
+  <section style="padding-top:6px;">
+    <div class="sec-eyebrow">Good To Know</div>
+    <div class="warn">
+      <h4>Property condition and pre-existing damage</h4>
+      <p>This home shows some age and weathering. Certain surfaces, like the wood siding, trim, lakeside stairs, and older window seals, may already have soft or rotted wood, failing stain or caulk, or loose material. Our soft wash process is deliberately gentle to keep that risk low, but Towslee's Got Pressure isn't responsible for pre-existing or hidden damage that shows up or worsens during cleaning. We'll always point out anything we're concerned about before and during the job.</p>
+    </div>
+    <ul class="terms">
+      <li>Sizes shown are measured from satellite and photos, then confirmed on site. Pricing only changes if the real numbers come back materially different.</li>
+      <li>Results depend on the age and condition of each surface. Deep set stains may lighten rather than disappear completely.</li>
+      <li>We'll need water and clear access to the exterior on service day. Scheduling depends on weather.</li>
+      <li>Payment is due on completion unless you prepay. This proposal is good for 30 days.</li>
+    </ul>
+  </section>
+
+  <div class="auth">
+    <div class="sec-eyebrow">Approve &amp; Schedule</div>
+    <h2>Ready to get on the schedule?</h2>
+    <p class="subtxt">Type your name to approve the work above and we'll lock in your date. Prefer to just text or call a quick yes? That works too.</p>
+
+    <div class="totalbar"><div class="l">Your Total</div><div class="v" id="grandTotal">$1,235</div></div>
+
+    <div class="prepay" id="prepayCard" onclick="togglePrepay(event)">
+      <div class="mini"></div>
+      <div class="pt"><b>Prepay &amp; schedule, save $50</b><br><span>Secure your spot now. Payments processed by Stripe.</span></div>
+      <div class="save">&minus;$50</div>
+    </div>
+
+    <div class="field">
+      <label>Your Name (this is your signature)</label>
+      <input type="text" id="sigName" placeholder="Type your full name" autocomplete="name" maxlength="80">
+    </div>
+    <div class="field">
+      <label>Date</label>
+      <div class="daterow">
+        <input type="text" id="sigDate" placeholder="MM/DD/YYYY" readonly>
+        <button type="button" class="today-btn" onclick="fillToday()">Use today</button>
+      </div>
+    </div>
+
+    <div class="consent">
+      <label class="cbx"><input type="checkbox" id="cUpd" checked><span class="box"></span><div><b>Service updates</b> &mdash; email me about scheduling, reminders, and job completion for this property.</div></label>
+      <label class="cbx"><input type="checkbox" id="cMkt"><span class="box"></span><div><b>Offers &amp; seasonal reminders</b> &mdash; occasional marketing from Towslee's Got Pressure. You can opt out anytime.</div></label>
+    </div>
+
+    <button class="cta" id="acceptBtn" onclick="accept()">Accept &amp; Schedule</button>
+    <p class="fine">By tapping Accept you authorize Towslee's Got Pressure to perform the work above, and you agree to our <a href="#" onclick="openLegal('tos');return false">Terms of Service</a> and <a href="#" onclick="openLegal('privacy');return false">Privacy Policy</a>. A verbal or text yes also authorizes us to proceed. Nothing is charged until the job is scheduled and confirmed.</p>
+    <p class="lock" id="secureLine" style="display:none">Secure checkout. Your booking is confirmed only after payment clears.</p>
+  </div>
+
+  <footer>
+    <img class="logo" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/6JHgINw2KJ7SHHj771TD/media/6a06038fe92818f121ab1f3c.jpg" alt="TGP" onerror="this.style.display='none'">
+    <div class="ftag">Where quality is matched by integrity. Serving Minnesota.</div>
+    <div class="social">
+      <a class="web" href="https://www.towsleespressure.com" target="_blank" rel="noopener" aria-label="Website">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.9 6h-2.8a15.7 15.7 0 00-1.3-3.4A8 8 0 0118.9 8zM12 4c.8 1.1 1.4 2.5 1.8 4h-3.6c.4-1.5 1-2.9 1.8-4zM4.3 14a7.9 7.9 0 010-4h3.2a17.6 17.6 0 000 4H4.3zm.8 2h2.8c.3 1.2.7 2.4 1.3 3.4A8 8 0 015.1 16zm2.8-8H5.1a8 8 0 014.1-3.4C8.6 5.6 8.2 6.8 7.9 8zM12 20c-.8-1.1-1.4-2.5-1.8-4h3.6c-.4 1.5-1 2.9-1.8 4zm2.1-6H9.9a15.6 15.6 0 010-4h4.2a15.6 15.6 0 010 4zm.7 5.4c.6-1 1-2.2 1.3-3.4h2.8a8 8 0 01-4.1 3.4zM16.5 14a17.6 17.6 0 000-4h3.2a7.9 7.9 0 010 4h-3.2z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/218.tgp" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.4.7-2.1 1.4C1.3 2.7.9 3.3.6 4.1.3 4.8.1 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c0 1.3.2 2.2.5 2.9.3.8.7 1.4 1.4 2.1.7.7 1.3 1.1 2.1 1.4.7.3 1.6.5 2.9.5 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3 0 2.2-.2 2.9-.5.8-.3 1.4-.7 2.1-1.4.7-.7 1.1-1.3 1.4-2.1.3-.7.5-1.6.5-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c0-1.3-.2-2.2-.5-2.9-.3-.8-.7-1.4-1.4-2.1-.7-.7-1.3-1.1-2.1-1.4-.7-.3-1.6-.5-2.9-.5C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4A6.2 6.2 0 0012 5.8zm0 10.2a4 4 0 110-8 4 4 0 010 8zm6.4-10.4a1.4 1.4 0 11-2.9 0 1.4 1.4 0 012.9 0z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61579502289785" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 10-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.6 4.5-4.6 1.3 0 2.6.2 2.6.2v2.9h-1.5c-1.5 0-1.9.9-1.9 1.8V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0024 12z"/></svg>
+      </a>
+    </div>
+    <div class="fcontact"><a href="tel:+12184516780">(218) 451-6780</a></div>
+    <div class="legal"><a href="#" onclick="openLegal('privacy');return false">Privacy Policy</a> &middot; <a href="#" onclick="openLegal('tos');return false">Terms of Service</a></div>
+    <div class="copy">&copy; 2026 Towslee's Got Pressure LLC. All Rights Reserved.</div>
+  </footer>
+</div>
+
+<div id="legal" onclick="if(event.target===this)closeLegal()">
+  <div class="sheet">
+    <button class="x" onclick="closeLegal()">&times;</button>
+    <div id="lpriv" style="display:none">
+      <h3>Privacy Policy</h3>
+      <div class="upd">Towslee's Got Pressure LLC &middot; Last updated July 7, 2026</div>
+      <p>This policy explains what we collect through this quote page and how we use it. By approving a quote you agree to this policy.</p>
+      <h4>What we collect</h4>
+      <p>Information you provide (name used as your signature, and any phone or email we already have on file for you), the service address on the proposal, the options you select, your approval and its date/time, and your email-preference choices. If you prepay, payment is processed by Stripe; we receive confirmation of payment but never see or store your full card number.</p>
+      <h4>How we use it</h4>
+      <p>To prepare and deliver your quote, schedule and perform the work, contact you about the job, keep business and tax records, and (only if you opt in) send occasional offers. We also use basic web analytics (such as Google Analytics) to understand page performance; this may set cookies and collect device/usage data in aggregate.</p>
+      <h4>Sharing</h4>
+      <p>We do not sell your information. We share it only with service providers that help us operate (for example Stripe for payment, our email provider for notifications, and our scheduling/CRM system) and when required by law.</p>
+      <h4>Your choices</h4>
+      <p>You can opt out of marketing at any time using the checkbox on this page, by replying STOP or UNSUBSCRIBE, or by contacting us. Service messages about a booked job may still be sent. You may request a copy or deletion of your information by contacting us, subject to records we must keep by law.</p>
+      <h4>Retention &amp; security</h4>
+      <p>We keep quote and job records for as long as needed for business and legal purposes. Data is stored with reputable providers using industry-standard safeguards. No method of transmission or storage is 100% secure.</p>
+      <h4>Contact</h4>
+      <p>Towslee's Got Pressure LLC, Carlton, MN &middot; (218) 451-6780 &middot; Admin@quantumarbor.biz</p>
+    </div>
+    <div id="ltos" style="display:none">
+      <h3>Terms of Service</h3>
+      <div class="upd">Towslee's Got Pressure LLC &middot; Last updated July 7, 2026</div>
+      <p>These terms govern the exterior cleaning services proposed on this page. Approving the quote (by typing your name, tapping Accept, or confirming by call or text) forms an agreement on these terms.</p>
+      <h4>Estimates &amp; pricing</h4>
+      <p>Measurements shown may be taken from satellite imagery and photos and are confirmed on site. Pricing may be adjusted only if on-site conditions are materially different from what was quoted; we will notify you before proceeding. Quotes are valid for 30 days.</p>
+      <h4>Scope &amp; results</h4>
+      <p>We perform the services listed using methods appropriate to each surface. Cleaning results depend on the age, material, and condition of each surface. Deeply set stains, oxidation, or weathering may lighten rather than disappear, and results are not guaranteed to be uniform.</p>
+      <h4>Property condition &amp; pre-existing damage</h4>
+      <p>Many exterior surfaces have pre-existing conditions not visible before cleaning, including soft or rotted wood, failing stain, caulk or paint, loose siding or trim, worn shingles, failed window seals, and prior improper installation or repairs. Our soft-wash process is deliberately gentle to minimize risk. To the fullest extent permitted by law, Towslee's Got Pressure LLC is not responsible for pre-existing or latent conditions, or for damage that results from or is revealed by such conditions during normal cleaning. We will flag concerns before and during the job when we can.</p>
+      <h4>Access, utilities &amp; safety</h4>
+      <p>You agree to provide safe access to the property and a working water source on the service day, to secure pets, and to close windows and doors. Scheduling is weather-dependent and may be moved for safety.</p>
+      <h4>Payment &amp; cancellation</h4>
+      <p>Payment is due on completion unless prepaid. Prepaid bookings are processed securely by Stripe and confirm your spot; the prepay discount applies only when paid in advance. Please give 24 hours' notice to reschedule.</p>
+      <h4>Limitation of liability</h4>
+      <p>To the maximum extent permitted by law, our total liability for any claim arising from the services is limited to the amount you paid for the specific service at issue. We are not liable for indirect, incidental, or consequential damages. Nothing in these terms limits liability that cannot be limited by law.</p>
+      <h4>Warranty disclaimer</h4>
+      <p>Services are provided "as is" and "as available." Except as expressly stated, we disclaim all warranties, express or implied, including merchantability and fitness for a particular purpose.</p>
+      <h4>Governing law</h4>
+      <p>These terms are governed by the laws of the State of Minnesota. Any dispute will be handled in the state or federal courts located in Minnesota.</p>
+      <h4>Contact</h4>
+      <p>Towslee's Got Pressure LLC, Carlton, MN &middot; (218) 451-6780 &middot; Admin@quantumarbor.biz</p>
+    </div>
+  </div>
+</div>
+<canvas id="confetti"></canvas>
+<div id="thanks">
+  <div class="badge"></div>
+  <h2>You're on the schedule!</h2>
+  <p id="thanksMsg">Thanks, Desiree. We've got your approval and Devan will reach out shortly to lock in your date.</p>
+  <div class="sum" id="thanksSum"></div>
+  <button class="close" onclick="closeThanks()">Close</button>
+</div>
+
+<script>
+/* =============================================================
+   Live backend (Supabase project: tgp-quotes)
+   Per-client quotes load by token in the URL (?q=TOKEN).
+   RLS blocks all direct table access; only edge functions
+   (service role) can read/write. Prices are recomputed
+   server-side, so client tampering can't change the total.
+   ============================================================= */
+const CONFIG = {
+  functionsBase:"https://kzasgpenjjcaiinaezcx.supabase.co/functions/v1",
+  supabaseKey:"sb_publishable_EopFKzG--8GOJTiwUE-FEA_ZXmlqAoT",
+  defaultToken:"9bffb0ae455c784f72f1167a8a6cc496ea04"   // Desiree (fallback when no ?q= in the link)
+};
+const TOKEN = new URLSearchParams(location.search).get('q')
+           || new URLSearchParams(location.search).get('token')
+           || CONFIG.defaultToken;
+const authHeaders = {'Content-Type':'application/json','apikey':CONFIG.supabaseKey,'Authorization':'Bearer '+CONFIG.supabaseKey};
+
+/* Quote data (hydrated from backend; these are safe fallbacks for preview) */
+let QUOTE = {
+  quoteNumber:"TGP-0107", client:"Desiree Chandler", company:"Evergreen Realty LLC",
+  property:"90520 Island Loop, Sturgeon Lake, MN 55783",
+  lineItems:[
+    {item:"Roof Soft Wash", size:"~1,300 sq ft", amount:390},
+    {item:"Wood Siding Soft Wash", size:"~1,250 sq ft", amount:425},
+    {item:"Eaves, Soffit & Fascia", size:"Full home", amount:170},
+    {item:"Lakeside Wood Stairs", size:"Heavy moss", amount:250}
+  ],
+  rates:{windowExt:10, windowInout:18.5, screen:5, deck:165, prepayDiscount:50}
+};
+
+const state={win:false,winQty:8,winMode:'ext',scr:false,scrQty:8,deck:false,prepay:false};
+const R=()=>QUOTE.rates;
+const winRate=()=>state.winMode==='inout'?R().windowInout:R().windowExt;
+const winTotal=()=>state.win?state.winQty*winRate():0;
+const scrTotal=()=>state.scr?state.scrQty*R().screen:0;
+const deckTotal=()=>state.deck?R().deck:0;
+const discount=()=>state.prepay?R().prepayDiscount:0;
+const baseTotal=()=>QUOTE.lineItems.reduce((s,x)=>s+Number(x.amount||0),0);
+const grand=()=>baseTotal()+winTotal()+scrTotal()+deckTotal()-discount();
+function money(n){const neg=n<0;n=Math.abs(n);const s=Number.isInteger(n)?n.toLocaleString('en-US'):n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});return (neg?'-$':'$')+s;}
+function esc(s){return String(s).replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));}
+
+function lineItems(){
+  const rows=QUOTE.lineItems.map(x=>({it:x.item,sz:x.size,amt:Number(x.amount||0),cls:''}));
+  if(state.win) rows.push({it:"Window Cleaning",sz:state.winQty+" windows, "+(state.winMode==='inout'?"interior + exterior":"exterior")+" ("+money(winRate())+" ea)",amt:winTotal(),cls:'addon-row'});
+  if(state.scr) rows.push({it:"Window Screen Cleaning",sz:state.scrQty+" screens ("+money(R().screen)+" ea)",amt:scrTotal(),cls:'addon-row'});
+  if(state.deck) rows.push({it:"Lakeside Deck Soft Wash",sz:"Wood safe wash",amt:deckTotal(),cls:'addon-row'});
+  if(state.prepay) rows.push({it:"Prepay discount",sz:"Paid in advance",amt:-discount(),cls:'disc'});
+  return rows;
+}
+function selections(){return {win:state.win,winQty:state.winQty,winMode:state.winMode,scr:state.scr,scrQty:state.scrQty,deck:state.deck,prepay:state.prepay};}
+function consent(){return {serviceUpdates:document.getElementById('cUpd').checked, marketing:document.getElementById('cMkt').checked};}
+function openLegal(which){document.getElementById('lpriv').style.display=which==='privacy'?'block':'none';document.getElementById('ltos').style.display=which==='tos'?'block':'none';document.getElementById('legal').style.display='flex';var sh=document.querySelector('#legal .sheet');if(sh)sh.scrollTop=0;}
+function closeLegal(){document.getElementById('legal').style.display='none';}
+
+function render(){
+  document.getElementById('qbody').innerHTML = lineItems().map(r=>
+    '<tr class="'+r.cls+'"><td><span class="it">'+esc(r.it)+'</span></td><td><span class="sz">'+esc(r.sz)+'</span></td><td class="r">'+money(r.amt)+'</td></tr>'
+  ).join('');
+  const g=grand();
+  document.getElementById('tblTotal').textContent=money(g);
+  document.getElementById('grandTotal').textContent=money(g);
+  document.getElementById('winPrice').textContent=state.win?money(winTotal()):'$0';
+  document.getElementById('scrPrice').textContent=state.scr?money(scrTotal()):'$0';
+  document.getElementById('winQty').textContent=state.winQty;
+  document.getElementById('scrQty').textContent=state.scrQty;
+  document.getElementById('winCard').classList.toggle('on',state.win);
+  document.getElementById('scrCard').classList.toggle('on',state.scr);
+  document.getElementById('deckCard').classList.toggle('on',state.deck);
+  document.getElementById('prepayCard').classList.toggle('on',state.prepay);
+  document.getElementById('winCtrl').style.display=state.win?'block':'none';
+  document.getElementById('scrCtrl').style.display=state.scr?'block':'none';
+  document.getElementById('mExt').classList.toggle('on',state.winMode==='ext');
+  document.getElementById('mIn').classList.toggle('on',state.winMode==='inout');
+  document.getElementById('acceptBtn').textContent=state.prepay?'Pay & Schedule Securely':'Accept & Schedule';
+  document.getElementById('secureLine').style.display=state.prepay?'block':'none';
+}
+function toggleWin(e){e.stopPropagation();state.win=!state.win;if(state.win&&state.winQty===0)state.winQty=8;render();}
+function stepWin(d){state.winQty=Math.max(0,Math.min(300,state.winQty+d));if(state.winQty===0)state.win=false;render();}
+function setMode(m,e){e.stopPropagation();state.winMode=m;render();}
+function toggleScr(e){e.stopPropagation();state.scr=!state.scr;if(state.scr&&state.scrQty===0)state.scrQty=8;render();}
+function stepScr(d){state.scrQty=Math.max(0,Math.min(300,state.scrQty+d));if(state.scrQty===0)state.scr=false;render();}
+function toggleDeck(e){state.deck=!state.deck;render();}
+function togglePrepay(e){state.prepay=!state.prepay;render();}
+function fillToday(){const d=new Date();document.getElementById('sigDate').value=(d.getMonth()+1+'').padStart(2,'0')+'/'+(d.getDate()+'').padStart(2,'0')+'/'+d.getFullYear();}
+
+/* hydrate this page for the specific client whose token is in the link */
+async function hydrate(){
+  try{
+    const res=await fetch(CONFIG.functionsBase+'/quote?token='+encodeURIComponent(TOKEN),{headers:authHeaders});
+    if(!res.ok) return;
+    const q=await res.json();
+    if(q && q.client){
+      QUOTE={quoteNumber:q.quoteNumber,client:q.client,company:q.company,property:q.property,lineItems:q.lineItems,rates:q.rates};
+      document.getElementById('hClient').textContent=q.client;
+      document.getElementById('hCompany').textContent=q.company||'';
+      document.getElementById('hProp').textContent=q.property||'';
+      document.getElementById('hQnum').textContent='#'+(q.quoteNumber||'');
+      document.querySelectorAll('.thanks-client').forEach(el=>el.textContent=q.client);
+      render();
+    }
+  }catch(e){/* keep fallback content */}
+}
+
+async function accept(){
+  const name=document.getElementById('sigName').value.trim().slice(0,80);
+  if(!name){alert('Please type your name to approve.');document.getElementById('sigName').focus();return;}
+  if(!document.getElementById('sigDate').value)fillToday();
+  const btn=document.getElementById('acceptBtn'); btn.disabled=true; const label=btn.textContent; btn.textContent='One moment…';
+
+  try{
+    if(state.prepay){
+      // SECURE PREPAY: go to Stripe Checkout. Booking is confirmed only after the
+      // webhook verifies payment; this page confirms on the ?paid=1 return.
+      const res=await fetch(CONFIG.functionsBase+'/create-checkout',{method:'POST',headers:authHeaders,body:JSON.stringify({token:TOKEN,name:document.getElementById('sigName').value.trim().slice(0,80),selections:selections(),consent:consent()})});
+      const data=await res.json();
+      if(data && data.url){ window.location.href=data.url; return; }
+      alert('Could not start secure checkout. Please try again or call us.'); btn.disabled=false; btn.textContent=label; return;
+    }
+    // NON-PREPAY: record acceptance (backend emails Admin@quantumarbor.biz + pushes to GHL).
+    const res=await fetch(CONFIG.functionsBase+'/accept',{method:'POST',headers:authHeaders,body:JSON.stringify({token:TOKEN,name:name,selections:selections(),consent:consent()})});
+    const data=await res.json();
+    if(data && data.ok){ showThanks(name); }
+    else { alert('Something went wrong approving the quote. Please call us and we’ll get you set.'); }
+  }catch(e){ alert('Network error. Please try again or call us.'); }
+  btn.disabled=false; btn.textContent=label;
+}
+
+function showThanks(name){
+  document.getElementById('thanksSum').innerHTML='Approved by <b>'+esc(name)+'</b><br>'+esc(QUOTE.property)+'<br>Total: <b>'+money(grand())+'</b>';
+  document.getElementById('confetti').style.display='block';
+  document.getElementById('thanks').style.display='flex';
+  launchConfetti();
+}
+function closeThanks(){document.getElementById('thanks').style.display='none';document.getElementById('confetti').style.display='none';}
+
+/* On return from Stripe: confirm ONLY if the backend marked the quote paid. */
+async function checkReturn(){
+  const p=new URLSearchParams(location.search);
+  if(p.get('canceled')==='1'){ return; }
+  if(p.get('paid')==='1'){
+    try{
+      const res=await fetch(CONFIG.functionsBase+'/quote?token='+encodeURIComponent(TOKEN),{headers:authHeaders});
+      const q=await res.json();
+      const msg=document.getElementById('thanksMsg');
+      if(q && q.status==='paid'){
+        msg.textContent='Payment received and your spot is locked in. Devan will reach out shortly to confirm your date.';
+        showThanks(q.client||QUOTE.client);
+      }else{
+        // payment not yet verified by Stripe webhook
+        msg.textContent='Thanks! We’re confirming your payment now. You’ll get an email once it’s locked in.';
+        showThanks(QUOTE.client);
+      }
+    }catch(e){}
+  }
+}
+
+function launchConfetti(){
+  const cv=document.getElementById('confetti'),ctx=cv.getContext('2d');
+  cv.width=innerWidth;cv.height=innerHeight;
+  const cols=['#C9A24D','#E4CA8A','#ffffff','#111111','#8a6d2b'];let bits=[];
+  for(let i=0;i<170;i++)bits.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height,r:4+Math.random()*6,c:cols[i%cols.length],vy:2+Math.random()*4,vx:-2+Math.random()*4,rot:Math.random()*6,vr:-.2+Math.random()*.4});
+  let t=0;(function f(){ctx.clearRect(0,0,cv.width,cv.height);t++;bits.forEach(b=>{b.y+=b.vy;b.x+=b.vx;b.rot+=b.vr;ctx.save();ctx.translate(b.x,b.y);ctx.rotate(b.rot);ctx.fillStyle=b.c;ctx.fillRect(-b.r/2,-b.r/2,b.r,b.r*1.6);ctx.restore();});if(t<260)requestAnimationFrame(f);else cv.style.display='none';})();
+}
+render();
+hydrate();
+checkReturn();
+</script>
+</body>
+</html>
