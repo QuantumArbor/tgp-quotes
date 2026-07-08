@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Towslee's Got Pressure — Proposal for Desiree Chandler</title>
+<title>Towslee's Got Pressure — Property Cleaning Proposal</title>
 <style>
   :root{
     --black:#0a0a0a;
@@ -197,7 +197,7 @@
   <div class="hero">
     <img class="logo" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/6JHgINw2KJ7SHHj771TD/media/6a06038fe92818f121ab1f3c.jpg" alt="Towslee's Got Pressure" onerror="this.style.display='none'">
     <div class="eyebrow">Property Cleaning Proposal</div>
-    <h1 id="hProp">90520 Island Loop<br>Sturgeon Lake, MN</h1>
+    <h1 id="hProp">Loading…</h1>
     <div class="herometa">
       <span class="pill">Single-story lake home</span>
       <span class="pill">Prepared <b>Jul 7, 2026</b></span>
@@ -206,7 +206,7 @@
     <div class="forwho">
       <div>
         <div class="lbl">Prepared For</div>
-        <b id="hClient">Desiree Chandler</b><br><span id="hCompany">Evergreen Realty LLC</span>
+        <b id="hClient">Loading…</b><br><span id="hCompany"></span>
       </div>
       <div style="text-align:right">
         <div class="lbl">Your Cleaner</div>
@@ -224,7 +224,7 @@
   <section>
     <div class="sec-eyebrow">The Plan</div>
     <div class="sec-title">What we'll get done</div>
-    <p class="intro">Hi Desiree, thanks for reaching out. Here's everything it takes to get the Island Loop property looking its best, top to bottom. Every surface gets the cleaning made for it, so the roof, the wood, and the finish all come out clean and protected.</p>
+    <p class="intro">Hi, thanks for reaching out. Here's everything it takes to get the Island Loop property looking its best, top to bottom. Every surface gets the cleaning made for it, so the roof, the wood, and the finish all come out clean and protected.</p>
 
     <div class="svc"><div class="n">01</div><div>
       <h4>Roof Soft Wash</h4>
@@ -464,7 +464,7 @@
 <div id="thanks">
   <div class="badge"></div>
   <h2>You're on the schedule!</h2>
-  <p id="thanksMsg">Thanks, Desiree. We've got your approval and Devan will reach out shortly to lock in your date.</p>
+  <p id="thanksMsg">Thanks. We've got your approval and Devan will reach out shortly to lock in your date.</p>
   <div class="sum" id="thanksSum"></div>
   <button class="close" onclick="closeThanks()">Close</button>
 </div>
@@ -480,7 +480,7 @@
 const CONFIG = {
   functionsBase:"https://kzasgpenjjcaiinaezcx.supabase.co/functions/v1",
   supabaseKey:"sb_publishable_EopFKzG--8GOJTiwUE-FEA_ZXmlqAoT",
-  defaultToken:"9bffb0ae455c784f72f1167a8a6cc496ea04"   // Desiree (fallback when no ?q= in the link)
+  defaultToken:null  // No fallback — requires ?q=<token> in URL
 };
 const TOKEN = new URLSearchParams(location.search).get('q')
            || new URLSearchParams(location.search).get('token')
@@ -489,14 +489,9 @@ const authHeaders = {'Content-Type':'application/json','apikey':CONFIG.supabaseK
 
 /* Quote data (hydrated from backend; these are safe fallbacks for preview) */
 let QUOTE = {
-  quoteNumber:"TGP-0107", client:"Desiree Chandler", company:"Evergreen Realty LLC",
-  property:"90520 Island Loop, Sturgeon Lake, MN 55783",
-  lineItems:[
-    {item:"Roof Soft Wash", size:"~1,300 sq ft", amount:390},
-    {item:"Wood Siding Soft Wash", size:"~1,250 sq ft", amount:425},
-    {item:"Eaves, Soffit & Fascia", size:"Full home", amount:170},
-    {item:"Lakeside Wood Stairs", size:"Heavy moss", amount:250}
-  ],
+  quoteNumber:"", client:"", company:"",
+  property:"",
+  lineItems:[],
   rates:{windowExt:10, windowInout:18.5, screen:5, deck:165, prepayDiscount:50}
 };
 
